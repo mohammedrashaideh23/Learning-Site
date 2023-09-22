@@ -1,0 +1,26 @@
+spring:
+  config:
+    url: "optional:configserver:http://localhost:8080"
+  data:
+    mongodb:
+      host: localhost
+      database: StudentDB
+      port: 27017
+  application:
+    name: Student
+  main:
+    allow-bean-definition-overriding: true
+
+spring.cloud.config.enabled: false
+
+spring.kafka.producer.bootstrap-servers: localhost:9092
+spring.kafka.producer.key-serializer: org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+server:
+  port: 9002
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
